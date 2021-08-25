@@ -1,0 +1,23 @@
+.list {
+  margin: 20px auto 10px auto;
+  border: 2px solid black;
+  width: 400px;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  box-shadow: #ccccc5 9px -1px 20px 5px;
+}
+.item {
+  margin: 10px 5px;
+  font-size: 18px;
+  font-family: monospace;
+  display: flex;
+  justify-content: space-between;
+}
+.btn {
+  font-family: cursive;
+  font-size: 14px;
+  border-radius: 4px;
+  background-color: #ea5e5e;
+  border: 1px solid;
+  cursor: pointer;
+}
