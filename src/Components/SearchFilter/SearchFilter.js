@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SearchFilter.module.css';
 
-const SearchFilter = ({ value = '', onChangeFilter }) => (
+const SearchFilter = ({ filterValue = '', onChangeFilter }) => (
   <label className={styles.lable}>
     Find contact by name
     <br />
     <input
       type="text"
-      value={value}
+      value={filterValue}
       onChange={onChangeFilter}
       className={styles.filters}
     ></input>
@@ -16,7 +16,7 @@ const SearchFilter = ({ value = '', onChangeFilter }) => (
 );
 
 SearchFilter.propTypes = {
-  value: PropTypes.string.isRequired,
+  filterValue: PropTypes.string.isRequired,
   onChangeFilter: PropTypes.func.isRequired,
 };
 
