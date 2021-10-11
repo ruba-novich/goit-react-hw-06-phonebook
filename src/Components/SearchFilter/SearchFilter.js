@@ -1,23 +1,25 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { getFilter } from '../../redux/phoneBook/selectors';
+import contactsActions from '../../redux/phoneBook/phoneBook-actions';
 import styles from './SearchFilter.module.css';
 
-const SearchFilter = ({ filterValue = '', onChangeFilter }) => (
-  <label className={styles.lable}>
-    Find contact by name
-    <br />
-    <input
-      type="text"
-      value={filterValue}
-      onChange={onChangeFilter}
-      className={styles.filters}
-    ></input>
-  </label>
-);
-
-SearchFilter.propTypes = {
-  filterValue: PropTypes.string.isRequired,
-  onChangeFilter: PropTypes.func.isRequired,
+const SearchFilter = () => {
+  const value = useSelector(getFilter);
+  const dispatch = useDispatch();
+  const onChange = e => dispatch(contactsActions.changeFilter(e.target.value));
+  return (
+    <label className={styles.lable}>
+      Find contact by name
+      <br />
+      <input
+        className={styles.filters}
+        type="text"
+        value={value}
+        onChange={onChange}
+      ></input>
+    </label>
+  );
 };
 
 export default SearchFilter;
